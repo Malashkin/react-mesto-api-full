@@ -3,15 +3,23 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
-const { Joi, celebrate, errors } = require("celebrate");
+const { errors } = require("celebrate");
 const cors = require("cors");
 const validator = require("validator");
 const usersRouter = require("./routes/users");
 const cardsRouter = require("./routes/cards");
-const { createUser, login } = require("./controllers/users");
 const auth = require("./middlewares/auth");
 const NotFoundError = require("./errors/NotFoundError");
 const { requestLogger, errorLogger } = require("./middlewares/logger");
+const rateLimit = require("express-rate-limit");
+const helmet = require("helmet");
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 require("dotenv").config();
 const PORT = 3001;
@@ -30,6 +38,8 @@ const CORS_CONFIG = {
 };
 
 app.use(cors(CORS_CONFIG));
+app.use(limiter);
+app.use(helmet());
 
 const method = (value) => {
   const result = validator.isURL(value);
@@ -50,30 +60,7 @@ app.get("/crash-test", () => {
   }, 0);
 });
 
-app.post(
-  "/signin",
-  celebrate({
-    body: Joi.object().keys({
-      email: Joi.string().required().email(),
-      password: Joi.string().required(),
-    }),
-  }),
-  login
-);
-
-app.post(
-  "/signup",
-  celebrate({
-    body: Joi.object().keys({
-      email: Joi.string().required().email(),
-      password: Joi.string().required(),
-      name: Joi.string().min(2).max(30),
-      about: Joi.string().min(2).max(30),
-      avatar: Joi.string().custom(method),
-    }),
-  }),
-  createUser
-);
+app.use("/", authRouter);
 
 app.use(auth);
 
