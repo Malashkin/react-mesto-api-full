@@ -83,7 +83,6 @@ function App() {
   function makeSignUp(email, password) {
     Auth.register(email, password)
       .then(() => {
-        console.log(email, password);
         history.push("/sign-in");
         setIsNoticeSuccessPopupOpen(true);
       })
@@ -133,7 +132,6 @@ function App() {
 
   function handleLikeClick(card) {
     const isLiked = card.likes.some((i) => i === currentUser._id);
-    console.log(currentUser._id);
     api
       .changeLikeCardStatus(card._id, isLiked, token)
       .then((newCard) => {
