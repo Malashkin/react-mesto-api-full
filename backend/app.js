@@ -13,6 +13,7 @@ const NotFoundError = require("./errors/NotFoundError");
 const { requestLogger, errorLogger } = require("./middlewares/logger");
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
+const { errorHandler } = require("./middlewares/errorHandler");
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -73,14 +74,7 @@ app.use("*", () => {
 
 app.use(errorLogger);
 app.use(errors());
-app.use((err, req, res, next) => {
-  const { statusCode = 500, message } = err;
-
-  res.status(statusCode).send({
-    message: statusCode === 500 ? "Ошибка сервера" : message,
-  });
-  next();
-});
+app.use(errorHandler);
 
 async function main() {
   await mongoose.connect("mongodb://localhost:27017/mestodb", {
