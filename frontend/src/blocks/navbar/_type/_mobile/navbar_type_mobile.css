@@ -1,0 +1,13 @@
+.navbar_type_mobile {
+display: none;
+}
+
+@media screen and (max-width: 480px) {
+.navbar_type_mobile {
+display: block;
+margin-right: 20px;
+height: 30px;
+width: 30px;
+}
+}
+

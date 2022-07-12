@@ -1,0 +1,24 @@
+.popup__close {
+    background: none;
+    border: none;
+    grid-area: bclose;
+    background-image: url(../../../images/CloseIcon.svg);
+    background-position: center;
+    background-size: 100%;
+    height: 32px;
+    width: 32px;
+    padding: 0;
+}
+
+.popup__close:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    .popup__close {
+        justify-self: end;
+        height: 20px;
+        width: 20px;
+    }
+}

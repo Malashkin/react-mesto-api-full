@@ -1,0 +1,12 @@
+.singform {
+  margin: 60px auto 60px;
+  max-width: 358px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 370px) {
+  .singform {
+    margin: 60px 5px 60px;
+  }
+}

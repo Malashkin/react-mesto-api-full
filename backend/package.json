@@ -1,0 +1,39 @@
+{
+  "name": "express-mesto-gha",
+  "version": "1.0.0",
+  "description": "Mesto back-end",
+  "main": "app.js",
+  "scripts": {
+    "lint": "npx eslint .",
+    "lint-fix": "npx eslint . --fix",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Mike Malashkin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malashkin/express-mesto-gha/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "celebrate": "^15.0.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.2",
+    "validator": "^13.7.0",
+    "winston": "^3.7.2"
+  }
+}

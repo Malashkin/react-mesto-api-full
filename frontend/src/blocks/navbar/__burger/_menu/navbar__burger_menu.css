@@ -1,0 +1,4 @@
+.navbar__burger_menu {
+  display: none;
+  flex-direction: column;
+}

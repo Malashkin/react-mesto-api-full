@@ -1,0 +1,10 @@
+.navbar_type_desktop {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 480px) {
+  .navbar_type_desktop {
+    display: none;
+  }
+}

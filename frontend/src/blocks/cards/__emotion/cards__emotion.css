@@ -1,0 +1,21 @@
+.cards__emotion {
+    min-height: 19px;
+    min-width: 22px;
+    background-image: url(../../../images/like.svg);
+    background-color: white;
+    background-size: 100%;
+    border: none;
+    background-repeat: no-repeat;
+    padding: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .cards__emotion {
+        margin-top: 6px;
+    }
+}
+
+.cards__emotion:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

@@ -1,0 +1,31 @@
+    .profile__button {
+        width: 24px;
+        height: 24px;
+        background: none;
+        border: 1px solid #FFFFFF;
+        position: relative;
+        z-index: 0;
+        align-items: center;
+        padding-top: 20px;
+        cursor: pointer;
+        grid-area: button;
+        align-self: center;
+        margin-left: 18px;
+        background-image: url(../../../images/pen.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 0;
+    }
+    
+    .profile__button:hover {
+        opacity: 0.6;
+    }
+    
+    @media screen and (max-width: 700px) {
+        .profile__button {
+            width: 18px;
+            height: 18px;
+            margin-top: 14px;
+            margin-left: 0;
+        }
+    }

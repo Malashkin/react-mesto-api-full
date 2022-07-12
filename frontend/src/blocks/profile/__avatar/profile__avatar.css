@@ -1,0 +1,12 @@
+.profile__avatar {
+  background-image: url(../../../images/VectorPen.svg);
+  background-color: transparent;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+

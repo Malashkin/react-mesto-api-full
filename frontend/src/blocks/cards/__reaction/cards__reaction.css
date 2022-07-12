@@ -1,0 +1,5 @@
+.cards__reaction {
+    display: flex;
+    justify-content: baseline;
+    flex-direction: column;
+}

@@ -1,0 +1,21 @@
+.navbar__link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: right;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: black;
+  border: none;
+
+}
+
+@media screen and (max-width: 700px) {
+  .navbar__link {
+    margin-right: 20px;
+  }
+}

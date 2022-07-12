@@ -1,0 +1,18 @@
+.popup__content {
+    display: grid;
+    grid-template-areas: ". bclose" "form .";
+    max-width: 470px;
+    position: absolute;
+    top: 100px;
+    left: calc(100%/2 - 430px/2);
+    gap: 10px;
+}
+
+@media screen and (max-width: 700px) {
+    .popup__content {
+        top: 62px;
+        left: calc(100%/2 - 282px/2);
+        grid-template-areas: "bclose" "form";
+        gap: 0;
+    }
+}

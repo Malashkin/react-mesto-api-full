@@ -1,0 +1,14 @@
+.signform__submit {
+  max-width: 100%;
+  height: 50px;
+  background-color: #fff;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000000;
+  margin: 0 0 15px;
+  padding: 0;
+  cursor: pointer;
+}
