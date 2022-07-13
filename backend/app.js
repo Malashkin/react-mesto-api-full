@@ -39,13 +39,13 @@ const CORS_CONFIG = {
 };
 
 app.use(cors(CORS_CONFIG));
-app.use(limiter);
 app.use(helmet());
 
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(requestLogger);
+app.use(limiter);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
