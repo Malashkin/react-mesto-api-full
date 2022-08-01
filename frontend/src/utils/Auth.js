@@ -1,4 +1,6 @@
-export const BASE_URL = "https://api.malashkin.nomoredomains.xyz";
+// export const BASE_URL = "https://api.malashkin.nomoredomains.xyz";
+
+export const BASE_URL = "http://localhost:3001";
 
 export const register = (email, password) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -44,5 +46,3 @@ export const checkToken = (token) => {
     .then((res) => res.json())
     .then((data) => data);
 };
-
-// export const BASE_URL = "http://localhost:3001";
